@@ -38,7 +38,7 @@ services:
   mysql-server-datavolume:
     image: wisecity/mysql-sidekick
   wise2build-biz:
-    image: registry.cn-hangzhou.aliyuncs.com/wise2c-test/build-biz:stable
+    image: registry.cn-hangzhou.aliyuncs.com/wisebuild/build-biz:stable
     ports:
     - 16060:16060
     volumes:
@@ -59,7 +59,7 @@ services:
     - --spring.rabbitmq.adminAddresses=http://rabbitmq:15672
     - --spring.rabbitmq.nodes=rabbit@rabbitmq
   wise2build-frontend:
-    image: registry.cn-hangzhou.aliyuncs.com/wise2c-dev/workflow-ui:stable
+    image: registry.cn-hangzhou.aliyuncs.com/wisebuild/workflow-ui:stable
     environment:
       CONSUL: consul-server:8500
     links:
@@ -71,7 +71,7 @@ services:
     - 8081:80/tcp
     restart: always
   wise2build-worker:
-    image: registry.cn-hangzhou.aliyuncs.com/wise2c-test/build-worker:stable
+    image: registry.cn-hangzhou.aliyuncs.com/wisebuild/build-worker:stable
     environment:
       WORKER_HOME: /data/worker
     volumes:
@@ -93,7 +93,7 @@ services:
   document:
     image: nginx
   build-schedule:
-    image: registry.cn-hangzhou.aliyuncs.com/wise2c-dev/build-schedule:stable
+    image: registry.cn-hangzhou.aliyuncs.com/wisebuild/build-schedule:stable
     ports:
     - 9595:9595
     links:

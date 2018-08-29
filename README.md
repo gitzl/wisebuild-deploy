@@ -7,10 +7,11 @@ WiseBuild   is a web application  about CI/CD
 * docker  -v 
 * docker-compose  -v
 
-## Run Server
+## Run Server and Restart
 
 ```
 docker-compose up -d 
+docker-compose restart
 ```
 ## The Index URL
 
@@ -27,7 +28,6 @@ you can check service health by consul ：
 ```
 < HOST > : 8500
 ```
-
 ## Pipeline Stage
 
 #### SCM
